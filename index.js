@@ -1,8 +1,20 @@
 const express = require('express');
 const app = express()
-const port = 4001;
 
+const loaders = require('./loaders');
 
-app.listen(port, () => {
-    console.log('Server is listening on port ${PORT');
-});
+const {PORT} = require('./config');
+
+async function startServer() {
+
+    //Init app loaders
+    loaders(app);
+
+    //Start server
+    app.listen(PORT, () => {
+        console.log('Server is listening on port ${PORT');
+    })
+}
+
+startServer();
+
