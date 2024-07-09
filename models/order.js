@@ -30,7 +30,7 @@ async create() {
         const { items, ...order } = this;
 
         //Generate SQL statement - using helper for dynamic parameter injection
-        const statement = pgp.helpers.insert(order, null, 'orderss') + 'RETURNING *';
+        const statement = pgp.helpers.insert(order, null, 'orders') + 'RETURNING *';
 
         //Execute SQL statement
         const result = await db.query(statement);
