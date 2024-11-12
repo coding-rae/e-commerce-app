@@ -13,6 +13,7 @@ module.exports = (app) => {
     // Product Endpoints
     router.get('/', async (req, res, next) => {
 
+
         try{
             const queryParams = req.query;
 
